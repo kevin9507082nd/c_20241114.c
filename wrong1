@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+void swap(int a,int b){
+    a=a+b;
+    b=a-b;
+    a=a-b;
+}
+
+int main(){
+    int number;
+    int age[20000]={0};
+    
+    while(scanf("%d",&number)&& number!=0){
+        int TempNumber_0=number;
+        int TempNumber_1=number;
+        while(number--){
+            scanf("%d",&age[number]);
+        }
+        for(int i=TempNumber_1;i>=0;i--){
+            for(int j=0;j<=TempNumber_1;j++){
+                if(age[j]>age[j+1]){
+                    swap(age[j],age[j+1]);
+                    printf("%d",age[j]);
+                }
+            }
+        }
+        for(int k=TempNumber_1-1;k>=0;k--){
+            printf("%d ",age[k]);
+        }
+    }
+
+}
